@@ -45,7 +45,7 @@ const navbarItems =[
 
 function Navbar() {
     const pathname = usePathname();
-    const [isSidebarOpen,SetIsSidebarOpen] = useState(false);
+    const [isSidebarOpen,setIsSidebarOpen] = useState(false);
 
   return (
     <nav className="h-20 flex border-b justify-between font-medium bg-white">
@@ -55,12 +55,12 @@ function Navbar() {
             </span>
         </Link>
         
-    <NavbarSidebar items ={navbarItems} open={isSidebarOpen} onOpenChange={SetIsSidebarOpen}/>
+    <NavbarSidebar items ={navbarItems} open={isSidebarOpen} onOpenChange={setIsSidebarOpen}/>
 
         <div className="items-center gap-4 hidden lg:flex">
             {
                 navbarItems.map((item)=>(
-                    <NavbarItem key= {item.href} href={item.href} isActive={pathname == item.href}>
+                    <NavbarItem key= {item.href} href={item.href} isActive={pathname === item.href}>
                         {item.children}
                     </NavbarItem>
                 
@@ -89,7 +89,7 @@ function Navbar() {
 
         <div className="flex lg:hidden items-center justify-center">
             <Button variant="ghost" className="size-12 border-transparent bg-white"
-            onClick={()=> SetIsSidebarOpen(true)}>
+            onClick={()=> setIsSidebarOpen(true)}>
                 <MenuIcon/>
             </Button>
         </div>
