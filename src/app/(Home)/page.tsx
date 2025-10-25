@@ -23,7 +23,7 @@ return(
         <Progress value={50}/>
       </div>
        <div>
-        <Textarea value="i am text area"></Textarea>
+        <Textarea placeholder="i am text area"></Textarea>
       </div>
       <div>
         <Checkbox></Checkbox>
