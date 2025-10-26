@@ -5,7 +5,7 @@ import { Poppins } from "next/font/google"
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
-import { NavbarSidebar } from "@/app/(Home)/navbar-sidebar";
+import { NavbarSidebar } from "@/app/(app)/(Home)/navbar-sidebar"
 import { useState } from "react";
 import {  MenuIcon } from "lucide-react";
 
@@ -88,7 +88,7 @@ function Navbar() {
         </div>
 
         <div className="flex lg:hidden items-center justify-center">
-            <Button variant="ghost" className="size-12 border-transparent bg-white"
+            <Button variant="ghost" aria-label="Open menu" className="size-12 border-transparent bg-white"
             onClick={()=> setIsSidebarOpen(true)}>
                 <MenuIcon/>
             </Button>
